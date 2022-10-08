@@ -1,0 +1,31 @@
+{
+  "files": {
+    "static/js/0.74cbbb0d.chunk.js": "/ecoin-stake/static/js/0.74cbbb0d.chunk.js",
+    "static/js/0.74cbbb0d.chunk.js.map": "/ecoin-stake/static/js/0.74cbbb0d.chunk.js.map",
+    "main.css": "/ecoin-stake/static/css/main.db257731.chunk.css",
+    "main.js": "/ecoin-stake/static/js/main.8b2a1092.chunk.js",
+    "main.js.map": "/ecoin-stake/static/js/main.8b2a1092.chunk.js.map",
+    "runtime-main.js": "/ecoin-stake/static/js/runtime-main.a4485e20.js",
+    "runtime-main.js.map": "/ecoin-stake/static/js/runtime-main.a4485e20.js.map",
+    "static/css/3.984f751f.chunk.css": "/ecoin-stake/static/css/3.984f751f.chunk.css",
+    "static/js/3.53b4e937.chunk.js": "/ecoin-stake/static/js/3.53b4e937.chunk.js",
+    "static/js/3.53b4e937.chunk.js.map": "/ecoin-stake/static/js/3.53b4e937.chunk.js.map",
+    "static/js/4.9f21a837.chunk.js": "/ecoin-stake/static/js/4.9f21a837.chunk.js",
+    "static/js/4.9f21a837.chunk.js.map": "/ecoin-stake/static/js/4.9f21a837.chunk.js.map",
+    "static/js/5.ae65c268.chunk.js": "/ecoin-stake/static/js/5.ae65c268.chunk.js",
+    "static/js/5.ae65c268.chunk.js.map": "/ecoin-stake/static/js/5.ae65c268.chunk.js.map",
+    "index.html": "/ecoin-stake/index.html",
+    "static/css/3.984f751f.chunk.css.map": "/ecoin-stake/static/css/3.984f751f.chunk.css.map",
+    "static/css/main.db257731.chunk.css.map": "/ecoin-stake/static/css/main.db257731.chunk.css.map",
+    "static/js/3.53b4e937.chunk.js.LICENSE.txt": "/ecoin-stake/static/js/3.53b4e937.chunk.js.LICENSE.txt",
+    "static/media/base.css": "/ecoin-stake/static/media/bg.d7aa0881.png",
+    "static/media/loading.gif": "/ecoin-stake/static/media/loading.c7d9f081.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4485e20.js",
+    "static/css/3.984f751f.chunk.css",
+    "static/js/3.53b4e937.chunk.js",
+    "static/css/main.db257731.chunk.css",
+    "static/js/main.8b2a1092.chunk.js"
+  ]
+}
