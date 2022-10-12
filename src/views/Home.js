@@ -8,10 +8,12 @@ function Home( { accountConnected} ) {
 
   const [ ownedTokens, setOwnedTokens ] = useState([]);
   const [ totalCount, setTotalCount ] = useState(0);
+  const [ loaded, setLoaded ] = useState(false);
  
   useEffect(() => {
     if (accountConnected){
       async function fetchData(){
+        setLoaded(false);
         let pageKey = "  ";
         let tokens = [];
         let totalCount = 0;
@@ -24,8 +26,11 @@ function Home( { accountConnected} ) {
           tokens.push(...filtered);
           totalCount += filtered.length;
           setTotalCount(totalCount);
+          if (tokens.length >= process.env.REACT_APP_GALLERY_MAX_ITEMS_COUNT)
+          break;
         }
         setOwnedTokens(tokens);
+        setLoaded(true);
       }
       fetchData();
     }
@@ -39,7 +44,7 @@ function Home( { accountConnected} ) {
         <div className="col-md-12">
           <div className="card">
             <div className="card-body">
-              <ItemList tokens={ownedTokens} totalCount={totalCount} accountConnected={accountConnected} />
+              <ItemList tokens={ownedTokens} totalCount={totalCount} accountConnected={accountConnected} loaded={loaded} />
             </div>
           </div>
         </div>
