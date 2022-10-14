@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingImage from "../assets/images/loading.gif";
 import "../assets/css/Item.css";
 
 
@@ -23,7 +24,15 @@ function Item( {token} ) {
   return (
     <div className="card my-3 item-card" onClick={navigateToItem}>
     <div className="card-header" style={{backgroundColor: "#"+metadata?.background_color}}>
-      <img src={metadata?.image} className="card-img-top" alt="..."/>
+      <img 
+        className="card-img-top" 
+        onError={({ currentTarget }) => {
+          currentTarget.src=LoadingImage;
+          setTimeout(function() { currentTarget.src=metadata?.image; }, 200);
+        }}
+        src={metadata?.name} 
+        alt="..."
+      />
     </div>
     
     <div className="card-body">

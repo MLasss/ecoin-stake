@@ -15,6 +15,7 @@ function ItemDetails( { accountConnected } ) {
   const { id } = useParams();
   const [ showMessage, setShowMessage ] = useState(false);
   const [ headerMessage, setHeaderMessage ] = useState(null);  
+  const [ showRefreshLink, setShowRefreshLink ] = useState(true);
   const [ metadata, setMetadata ] = useState(null);
   const [ owner, setOwner ] = useState(null);
   const [ owned, setOwned ] = useState(false);
@@ -74,7 +75,7 @@ function ItemDetails( { accountConnected } ) {
     stake(id).then(val => {
       if (val === "1"){
         setStakeCoinModalVisibility(false);
-        displayMessage("The Coin was staked Successfully!");
+        displayMessageRefresh("The Coin was staked Successfully, it's currently LOCKED and can not be traded. Refresh Metadata on Opensea gallery to see changes on Opensea.");
         refreshScreenData();
       } else {
         setInputErrors(extractMessage(val?.message));
@@ -97,7 +98,7 @@ function ItemDetails( { accountConnected } ) {
     withdrawStake(id).then(val => {
       if (val === "1"){
         setUnstakeCoinModalVisibility(false);
-        displayMessage("The Coin was unstaked Successfully!");
+        displayMessageRefresh("The Coin was unstaked Successfully. Emojis were deposited to your account. Refresh Metadata on Opensea gallery to see changes on Opensea.");
         refreshScreenData();
       } else {
         setInputErrors(extractMessage(val?.message));
@@ -120,7 +121,7 @@ function ItemDetails( { accountConnected } ) {
     emergencyWithdrawStake(id).then(val => {
       if (val === "1"){
         setUnlockCoinModalVisibility(false);
-        displayMessage("The Coin was unlocked Successfully!");
+        displayMessageRefresh("The Coin was unlocked Successfully! Refresh Metadata on Opensea gallery to see changes on Opensea.");
         refreshScreenData();
       } else {
         setInputErrors(extractMessage(val?.message));
@@ -145,9 +146,16 @@ function ItemDetails( { accountConnected } ) {
   }
 
   function displayMessage(message){
+    setShowRefreshLink(false);
     setHeaderMessage(message);
     setShowMessage(true);  
   }
+  
+  function displayMessageRefresh(message){
+    setShowRefreshLink(true);
+    setHeaderMessage(message);
+    setShowMessage(true);  
+  }  
 
   function extractMessage(message) {
     if (message == null) return "Failed to execute transaction.";
@@ -174,6 +182,11 @@ function ItemDetails( { accountConnected } ) {
                 <Alert variant="secondary" show={showMessage} onClose={() => setShowMessage(false)} dismissible>
                   <p className="mb-0">
                       {headerMessage}
+                      {
+                        showRefreshLink ?
+                        <><br/>You may need to wait few sec. and click <button type="button" className="btn btn-link pt-0 px-0" onClick={refreshScreenData}>Refresh Screen</button> to see updated data on the screen.</>
+                          : <></>
+                      }                      
                   </p>
                 </Alert> 
               </div>            
@@ -196,7 +209,13 @@ function ItemDetails( { accountConnected } ) {
               <div className="row">
                 <div className="col-md-4">
                   <div className="mb-3 card item-card" style={{backgroundColor: "#"+metadata?.background_color}}>
-                    <LazyLoadImage placeholderSrc={LoadingImage} src={metadata?.image} className="img-fluid" alt="" />
+                    <LazyLoadImage placeholderSrc={LoadingImage} src={metadata?.image} className="img-fluid" alt="" 
+                      onError={({ currentTarget }) => {
+                        displayMessage("It's taking longer to load image from IPFS, please be patient.");
+                        currentTarget.src=LoadingImage;
+                        setTimeout(function() { currentTarget.src=metadata?.image; }, 500);
+                      }} 
+                    />
                   </div>
                 </div>
                 <div className="col-md-8 px-1">
