@@ -29,18 +29,13 @@ function ConnectWallet({ onAccountConnect }) {
     }, [web3Modal])
 
     async function connectWallet() {
-      try {
-        const provider = await web3Modal.connect();
-        addListeners(provider);
-        const ethersProvider = new providers.Web3Provider(provider)
-        ethersProvider.getSigner().getAddress().then(userAddress => {
-          setAddress(userAddress)
-          onAccountConnect(userAddress);
-        });
-      }
-      catch(error){
-        console.error(error);
-      }
+      const provider = await web3Modal.connect();
+      addListeners(provider);
+      const ethersProvider = new providers.Web3Provider(provider)
+      ethersProvider.getSigner().getAddress().then(userAddress => {
+        setAddress(userAddress)
+        onAccountConnect(userAddress);
+      });
     }
 
     async function disconnectWallet(){
