@@ -1,31 +1,32 @@
 {
   "files": {
-    "static/js/0.c37e35d1.chunk.js": "/ecoin-stake/static/js/0.c37e35d1.chunk.js",
-    "static/js/0.c37e35d1.chunk.js.map": "/ecoin-stake/static/js/0.c37e35d1.chunk.js.map",
+    "static/js/0.199d748a.chunk.js": "/ecoin-stake/static/js/0.199d748a.chunk.js",
+    "static/js/0.199d748a.chunk.js.map": "/ecoin-stake/static/js/0.199d748a.chunk.js.map",
     "main.css": "/ecoin-stake/static/css/main.d6a0ff65.chunk.css",
-    "main.js": "/ecoin-stake/static/js/main.c939e7a4.chunk.js",
-    "main.js.map": "/ecoin-stake/static/js/main.c939e7a4.chunk.js.map",
-    "runtime-main.js": "/ecoin-stake/static/js/runtime-main.6a8ed653.js",
-    "runtime-main.js.map": "/ecoin-stake/static/js/runtime-main.6a8ed653.js.map",
+    "main.js": "/ecoin-stake/static/js/main.b09c4633.chunk.js",
+    "main.js.map": "/ecoin-stake/static/js/main.b09c4633.chunk.js.map",
+    "runtime-main.js": "/ecoin-stake/static/js/runtime-main.9cf326ab.js",
+    "runtime-main.js.map": "/ecoin-stake/static/js/runtime-main.9cf326ab.js.map",
     "static/css/3.984f751f.chunk.css": "/ecoin-stake/static/css/3.984f751f.chunk.css",
-    "static/js/3.6453b413.chunk.js": "/ecoin-stake/static/js/3.6453b413.chunk.js",
-    "static/js/3.6453b413.chunk.js.map": "/ecoin-stake/static/js/3.6453b413.chunk.js.map",
-    "static/js/4.5e4f9b93.chunk.js": "/ecoin-stake/static/js/4.5e4f9b93.chunk.js",
-    "static/js/4.5e4f9b93.chunk.js.map": "/ecoin-stake/static/js/4.5e4f9b93.chunk.js.map",
-    "static/js/5.ae65c268.chunk.js": "/ecoin-stake/static/js/5.ae65c268.chunk.js",
-    "static/js/5.ae65c268.chunk.js.map": "/ecoin-stake/static/js/5.ae65c268.chunk.js.map",
+    "static/js/3.b9377dc1.chunk.js": "/ecoin-stake/static/js/3.b9377dc1.chunk.js",
+    "static/js/3.b9377dc1.chunk.js.map": "/ecoin-stake/static/js/3.b9377dc1.chunk.js.map",
+    "static/js/4.737d2588.chunk.js": "/ecoin-stake/static/js/4.737d2588.chunk.js",
+    "static/js/4.737d2588.chunk.js.map": "/ecoin-stake/static/js/4.737d2588.chunk.js.map",
+    "static/js/5.07357f52.chunk.js": "/ecoin-stake/static/js/5.07357f52.chunk.js",
+    "static/js/5.07357f52.chunk.js.map": "/ecoin-stake/static/js/5.07357f52.chunk.js.map",
     "index.html": "/ecoin-stake/index.html",
     "static/css/3.984f751f.chunk.css.map": "/ecoin-stake/static/css/3.984f751f.chunk.css.map",
     "static/css/main.d6a0ff65.chunk.css.map": "/ecoin-stake/static/css/main.d6a0ff65.chunk.css.map",
-    "static/js/3.6453b413.chunk.js.LICENSE.txt": "/ecoin-stake/static/js/3.6453b413.chunk.js.LICENSE.txt",
+    "static/js/3.b9377dc1.chunk.js.LICENSE.txt": "/ecoin-stake/static/js/3.b9377dc1.chunk.js.LICENSE.txt",
     "static/media/base.css": "/ecoin-stake/static/media/bg.d7aa0881.png",
-    "static/media/loading.gif": "/ecoin-stake/static/media/loading.429b2865.gif"
+    "static/media/loading.gif": "/ecoin-stake/static/media/loading.429b2865.gif",
+    "static/media/metadata-error.a317a87e.png": "/ecoin-stake/static/media/metadata-error.a317a87e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.6a8ed653.js",
+    "static/js/runtime-main.9cf326ab.js",
     "static/css/3.984f751f.chunk.css",
-    "static/js/3.6453b413.chunk.js",
+    "static/js/3.b9377dc1.chunk.js",
     "static/css/main.d6a0ff65.chunk.css",
-    "static/js/main.c939e7a4.chunk.js"
+    "static/js/main.b09c4633.chunk.js"
   ]
 }
