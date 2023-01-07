@@ -58,7 +58,7 @@ function ItemDetails( { accountConnected } ) {
   }
 
   function calculateRewards() {
-    calculateStakeReward(id).then(rw => setReward(rw / 1000000000000000000));
+    calculateStakeReward(id).then(rw => setReward(parseFloat((rw / 1000000000000000000).toFixed(3))));
   }
 
   // stake Modal ----------------------------
@@ -75,7 +75,7 @@ function ItemDetails( { accountConnected } ) {
     stake(id).then(val => {
       if (val === "1"){
         setStakeCoinModalVisibility(false);
-        displayMessageRefresh("The Coin was staked Successfully, it's currently LOCKED and can not be traded. Refresh Metadata on Opensea gallery to see changes on Opensea.");
+        displayMessageRefresh("The Coin has been successfully staked and is currently locked. It cannot be traded until it is unstaked. Remember to refresh the metadata on the Opensea gallery to see the changes on Opensea.");
         refreshScreenData();
       } else {
         setInputErrors(extractMessage(val?.message));
@@ -98,7 +98,7 @@ function ItemDetails( { accountConnected } ) {
     withdrawStake(id).then(val => {
       if (val === "1"){
         setUnstakeCoinModalVisibility(false);
-        displayMessageRefresh("The Coin was unstaked Successfully. Emojis were deposited to your account. Refresh Metadata on Opensea gallery to see changes on Opensea.");
+        displayMessageRefresh("The Coin has been successfully unstaked and earned EMOJIS have been added to your account. Remember to refresh the metadata on the Opensea gallery to see the changes on Opensea.");
         refreshScreenData();
       } else {
         setInputErrors(extractMessage(val?.message));
@@ -121,7 +121,7 @@ function ItemDetails( { accountConnected } ) {
     emergencyWithdrawStake(id).then(val => {
       if (val === "1"){
         setUnlockCoinModalVisibility(false);
-        displayMessageRefresh("The Coin was unlocked Successfully! Refresh Metadata on Opensea gallery to see changes on Opensea.");
+        displayMessageRefresh("The Coin was successfully unlocked. Remember to refresh the metadata on the Opensea gallery to see the changes on Opensea.");
         refreshScreenData();
       } else {
         setInputErrors(extractMessage(val?.message));
@@ -195,7 +195,7 @@ function ItemDetails( { accountConnected } ) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-caret-left-fill" viewBox="0 0 18 18">
                     <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                   </svg> 
-                  My Gallery
+                  My Stakeable Gallery
                 </Link>
                 <button type="button" className="btn btn-light action-btn py-1 align-right" onClick={refreshMetadata} disabled={!owned} >
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-arrow-clockwise" viewBox="0 0 18 18">
@@ -233,7 +233,7 @@ function ItemDetails( { accountConnected } ) {
                       {
                         reward > 0 ?
                           (<div className="row px-2">
-                          <p>  Staking Rewards: <b>{reward}</b> </p>
+                          <p>  Staking Rewards: <b>{reward}</b> EMOJIS </p>
                           </div> )
                           : <></>
                       }
@@ -294,8 +294,8 @@ function ItemDetails( { accountConnected } ) {
             <Modal.Title>Stake The Coin</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <span>Staking this coin will put it into locked status. Locked coins can not transfered or interacted with. You can unstake the coin at any time.<br/>
-            Are you sure you want to proceed?
+            <span>Staking this coin will lock it and prevent it from being transferred or interacted with. However, you can choose to unstake the coin at any time. <br/><br/>
+            Are you sure you want to proceed with the staking process?
             </span> 
             <br/>
             <span className="text-danger">{inputErrors}</span>
@@ -315,9 +315,9 @@ function ItemDetails( { accountConnected } ) {
             <Modal.Title>Unstake The Coin</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <span>Unstaking this coin will reduce the coin's Grade, but will reward you with {reward} Emojis <br/> 
+            <span>Unstaking this coin will reward you with <b>{reward}</b> EMOJIS, <br/>but will also lower the coin's Grade. <br/><br/>  
             Are you sure you want to proceed?
-            </span> 
+            </span>
             <br/>
             <span className="text-danger">{inputErrors}</span>
           </Modal.Body>
@@ -336,8 +336,10 @@ function ItemDetails( { accountConnected } ) {
             <Modal.Title>Unlock The Coin</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <span>Emergency unlock will discard all accumulated stake rewards and will unlock this coin. Coin's grade will NOT be reduced.<br/> 
-            Are you sure you want to proceed?
+            <span>
+              <b>Warning: </b> Proceeding with an emergency unlock will discard all accumulated stake rewards and unlock this coin. 
+              However, the coin's grade will NOT be affected. <br/> <br/> 
+              Are you sure you want to proceed?
             </span> 
             <br/>
             <span className="text-danger">{inputErrors}</span>

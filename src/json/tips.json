@@ -1,0 +1,13 @@
+[
+    "<strong>Note:</strong> In some cases, IPFS may be slow and it may take some time for the NFT images to load.",
+	"<strong>Tip:</strong> If the details displayed on the coins list are incorrect, you can refresh the metadata by selecting the coin in question and clicking the 'Refresh Metadata' button on the coin's details page.",
+    "<strong>Tip:</strong> If you've made changes to your NFT on OpenSea and they're not showing up, try clicking the 'Refresh Metadata' button on the OpenSea platform.",
+    "<strong>Note:</strong> Blockchain transactions can sometimes take a while to be processed, especially during times of high traffic. Be patient and wait for your transaction to be completed.",
+    "<strong>Note:</strong> The EmojiCoins Staking dapp only displays coins that are eligible for staking. Make sure your coin meets the necessary requirements.",
+    "<strong>Note:</strong> The longer you stake your EmojiCoins, the higher the reward you'll receive. However, this also means you won't be able to access or use your coins during that time.",
+    "<strong>Note:</strong> In order to stake your EmojiCoins, they must have a grade of MS60 or higher. Check your coin's grade before attempting to stake it.",
+    "<strong>Note:</strong> The maximum staking reward you can receive is 3.33 times the nominal value of your coin. This means that the more valuable your coin is, the higher the potential reward you can earn.",
+    "<strong>Note:</strong> Once your staking rewards reach the nominal value of your coin, they will begin to decrease. Keep this in mind when deciding how long to stake your coins.",
+    "<strong>Note:</strong> Claiming your staking rewards will reduce your coin's grade by one point. This can limit the amount of staking rewards your coin is eligible to receive in the future.",
+    "<strong>Tip:</strong> If you want to preserve your coin's grade, you can choose to abandon staking at any time. This will allow you to continue earning rewards without negatively impacting your coin's grade."
+]

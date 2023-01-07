@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import alchemyClient from "../lib/alchemyClient";
 import ItemList from "../components/ItemList";
 import Alert from 'react-bootstrap/Alert'
+import RandomSentence from '../components/RandomSentence';
 import "../assets/css/Home.css";
 
 
@@ -22,7 +23,9 @@ function Home( { accountConnected} ) {
           let r = await alchemyClient.nft.getNftsForOwner(accountConnected, {pageKey:pageKey, contractAddresses:[process.env.REACT_APP_ERC721_TOKEN_ADDRESS]});
           pageKey = r.pageKey;
           let filtered = r.ownedNfts.filter(function (e) {
-            return e.rawMetadata.attributes.some(item => item.value === 'Stakeable');
+            if (e.rawMetadata && e.rawMetadata.attributes) {
+              return e.rawMetadata.attributes.some(item => item.value === 'Stakeable');
+            }
           });
           tokens.push(...filtered);
           totalCount += filtered.length;
@@ -46,7 +49,7 @@ function Home( { accountConnected} ) {
           <div className="card">
             <div className="card-body">
               <Alert variant="secondary" show={showMessage && totalCount > 0} onClose={() => setShowMessage(false)} dismissible>
-                In some extreme cases IPFS may be very slow, it may take time for NFT images to load.
+                <RandomSentence jsonFileName="tips" className="mb-0" delay={30000}/>
               </Alert> 
               <ItemList tokens={ownedTokens} totalCount={totalCount} accountConnected={accountConnected} loaded={loaded} />
             </div>
